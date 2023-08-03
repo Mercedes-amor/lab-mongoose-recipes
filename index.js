@@ -43,18 +43,18 @@ mongoose
   // .then ( (response) => {
   //  console.log("funcionando", response.title);
   // })
-  // .then ( (response) => {
-  //  return Recipe.insertMany (data)
-  // })
+  .then ( (response) => {
+   return Recipe.insertMany (data)
+  })
+  .then((response)=>{
+response.forEach(element =>{
+  console.log(element.title)
+})
+  })
 // .then((response)=>{
 //   console.log(response)
 // })
 
-  .then ( (Recipes) => {
-  //  return Recipe.find({  }).select({title:1})
-  
-  console.log(Recipes)
-  })
   
   .then ( (response) => {
     console.log (response)

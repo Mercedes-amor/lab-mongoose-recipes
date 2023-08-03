@@ -16,52 +16,52 @@ mongoose
     // return Recipe.deleteMany()
 
 
-    return Recipe.findOneAndUpdate({ title: "Rigatoni alla Genovese" }, { duration: 100  }, { new: true })
+    return Recipe.findOneAndUpdate({ title: "Rigatoni alla Genovese" }, { duration: 140  }, { new: true })
+    // return Recipe.deleteOne({ title: "Carrot Cake"})
   })
   .then ((response) =>{
-    console.log(response)
+    console.log(response.title)
   })
   // .then(() => {
   //   return Recipe.create( {
-  //     title: "Carrot Cake",
-  //     level: "Amateur Chef",
+  //     title: "Tarta de Pikachu",
+  //     level: "UltraPro Chef",
   //     ingredients: [
-  //       "6 cups grated carrots",
-  //       "1 cup brown sugar",
-  //       "1 cup raisins",
-  //       "4 eggs",
-  //       "1 1/2 cups white sugar",
-  //       "1 cup vegetable oil",
-  //       "2 teaspoons vanilla extract",
-  //       "1 cup crushed pineapple, drained",
-  //       "3 cups all-purpose flour",
-  //       "1 1/2 teaspoons baking soda",
-  //       "1 teaspoon salt",
-  //       "4 teaspoons ground cinnamon"
+  //       "1 Pikachu",
+  //       "1 Oddish",
+  //       "5 Bayas",
+  //       "un poco de chocolate"
+      
   //     ],
-  //     cuisine: "International",
+  //     cuisine: "Pueblo paleta",
   //     dishType: "dessert",
-  //     image: "https://images.media-allrecipes.com/userphotos/720x405/3605684.jpg",
+  //     image: "https://img-global.cpcdn.com/recipes/94c391ce1d2c12b4/1360x964cq70/tarta-pikachu-foto-principal.webp",
   //     duration: 130,
-  //     creator: "Chef Nadia"
+  //     creator: "Prof Oak"
   //   })
   // })
   // .then ( (response) => {
   //  console.log("funcionando", response.title);
   // })
-  .then ( (response) => {
-   return Recipe.insertMany (data)
-  })
-
-
   // .then ( (response) => {
-  //  console.log (Recipe.find({duration: 160}).select({title:1}))
-  // console.log(Recipe.title)
+  //  return Recipe.insertMany (data)
   // })
+// .then((response)=>{
+//   console.log(response)
+// })
+
+  .then ( (Recipes) => {
+  //  return Recipe.find({  }).select({title:1})
+  
+  console.log(Recipes)
+  })
   
   .then ( (response) => {
-    // console.log (response)
+    console.log (response)
   return mongoose.connection.close()
+  })
+  .then(()=>{
+    console.log("Conexion cerrada!")
   })
 
   .catch(error => {

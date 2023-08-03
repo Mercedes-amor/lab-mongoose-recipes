@@ -14,6 +14,12 @@ mongoose
     console.log(`Connected to the database: "${x.connection.name}"`);
     // Before adding any recipes to the database, let's remove all existing ones
     // return Recipe.deleteMany()
+
+
+    return Recipe.findOneAndUpdate({ title: "Rigatoni alla Genovese" }, { duration: 100  }, { new: true })
+  })
+  .then ((response) =>{
+    console.log(response)
   })
   // .then(() => {
   //   return Recipe.create( {
@@ -43,9 +49,11 @@ mongoose
   // .then ( (response) => {
   //  console.log("funcionando", response.title);
   // })
-  // .then ( (response) => {
-  //  return Recipe.insertMany (data)
-  // })
+  .then ( (response) => {
+   return Recipe.insertMany (data)
+  })
+
+
   // .then ( (response) => {
   //  console.log (Recipe.find({duration: 160}).select({title:1}))
   // console.log(Recipe.title)
